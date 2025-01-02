@@ -1,0 +1,24 @@
+---
+import Title from "./ux/Title.astro";
+import Section from "./ux/Section.astro";
+---
+
+<Section 
+  color ="#FFFFFF"
+>
+  <div class="container max-w-[1280px] mx-auto flex flex-col md:flex-row items-center justify-between p-4">
+    <div class="w-2/5">
+        <Title text_1="¿Qué es el Barrido" text_2="Industrial?" />
+        <p class="my-5 text-lg text-gray-500">
+          El barrido industrial es un servicio tecnificado para la limpieza de
+          grandes superficies como almacenes, estacionamientos, fábricas y obras de
+          construcción. Este proceso se realiza con maquinaria avanzada,
+          garantizando resultados rápidos, efectivos y con estándares de alta
+          calidad.
+        </p>
+    </div>
+    <div class="w-3/5 flex justify-end">
+        <img class="w-[80%]" src="./img/img_1.png" alt="">
+    </div>
+  </div>
+</Section>

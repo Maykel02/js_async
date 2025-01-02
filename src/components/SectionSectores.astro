@@ -1,0 +1,42 @@
+---
+import Section from "./ux/Section.astro";
+import Title from "./ux/Title.astro";
+import CardSectores from "./ux/CardSectores.astro";
+---
+
+<Section>
+  <div class="text-center">
+    <Title text_1="Sectores que" text_2="Atendemos" />
+  </div>
+  <div class="flex items-center container mx-auto mt-14 gap-24">
+    <div class="w-1/2 flex justify-end">
+      <img src="./img/img_2.png" alt="" />
+    </div>
+    <div class="w-1/2 grid grid-cols-1 gap-6">
+     
+        <CardSectores
+            title="Almacenes"
+            body="Mantén un ambiente limpio y sanitizado para una operación eficiente."
+            image="./img/icono_1.svg"
+        />
+        <img src="./img/linea.png" alt="">
+        <CardSectores
+            title="Centros comerciales"
+            body="Dale una excelente imagen a tus clientes."
+            image="./img/icono_2.svg"
+        />
+        <img src="./img/linea.png" alt="">
+        <CardSectores
+            title="Obras de construcción"
+            body="Asegúrate de entregar espacios impecables."
+            image="./img/icono_3.svg"
+        />
+        <img src="./img/linea.png" alt="">
+        <CardSectores
+            title="Fábricas e industrias"
+            body="Mantén un ambiente limpio y sanitizado para una operación eficiente."
+            image="./img/icono_4.svg"
+        />
+    </div>
+  </div>
+</Section>

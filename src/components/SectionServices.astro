@@ -1,0 +1,35 @@
+---
+import Title from "./ux/Title.astro";
+import Section from "./ux/Section.astro";
+import CardService from "./ux/CardService.astro";
+---
+
+<Section>
+  <div class="container mx-auto flex flex-col">
+    <div class="text-center">
+      <Title text_1="Nuestros Servicios " text_2="Especializados" />
+    </div>
+    <div class="grid grid-cols-4 gap-10 mt-11">
+      <CardService
+        title="Barrido Industrial"
+        description="Realizamos limpieza de grandes superficies en tiempo récord, eliminando suciedad, polvo y residuos."
+        image="./img/service_1.jpg"
+      />
+      <CardService
+        title="Fregado Industrial"
+        description="Remoción de manchas difíciles y suciedad adherida en pisos industriales o comerciales."
+        image="./img/service_2.jpg"
+      />
+      <CardService
+        title="Limpieza de Estacionamientos"
+        description="Especialistas en estacionamientos de múltiples niveles, servicio mixto de barrido y fregado industrial los cuales quedan listos en cuestión de horas."
+        image="./img/service_3.jpg"
+      />
+      <CardService
+        title="Limpieza en Obra de Construcción"
+        description="Ofrecemos servicios programados para empresas que buscan mantener sus áreas limpias todo el año o en emergencias."
+        image="./img/service_4.jpg"
+      />
+    </div>
+  </div>
+</Section>

@@ -1,0 +1,43 @@
+---
+const { text_1, text_2, color } = Astro.props;
+---
+
+<div>
+  <h1 class="text-5xl relative font-bold my-10">
+    <span style=`color:${color}`>
+      {text_1}
+    </span>
+    <br />
+    <span class="text-title" style=`-webkit-text-stroke: 1px ${color}; text-stroke: 1px ${color};`>
+      {text_2}
+    </span>
+  </h1>
+</div>
+
+<style>
+  h1 {
+    color: var(--primary-color);
+  }
+  .text-title {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--primary-color);
+    text-stroke: 1px var(--primary-color);
+  }
+  .text-title::before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 160px; /* Ancho total de los rectángulos */
+    height: 10px; /* Altura de los rectángulos */
+    background: linear-gradient(
+      to right,
+      #0460ad 0%,
+      #0460ad 33.33%,
+      #0787f5 33.33%,
+      #0787f5 66.66%,
+      #b8dcff 66.66%,
+      #b8dcff 100%
+    ); /* Colores de los rectángulos */
+    margin-right: 8px;
+  }
+</style>

@@ -1,0 +1,37 @@
+---
+import Section from "./ux/Section.astro";
+import Title from "./ux/Title.astro";
+import CardBeneficios from "./ux/CardBeneficios.astro";
+---
+
+<Section color="#0069B1">
+  <div class="text-center container mx-auto">
+    <Title
+      text_1="Beneficios del"
+      text_2="Barrido Industrial"
+      color="#ffffff"
+    />
+    <div class="grid grid-cols-4 gap-16 mt-11">
+      <CardBeneficios
+        title="Optimización del tiempo"
+        body="Reduce los días de limpieza de semanas a horas."
+        image="./img/clock.svg"
+      />
+      <CardBeneficios
+        title="Espacios más seguros"
+        body=" Elimina el polvo y los residuos que podrían ser peligrosos y tóxicos."
+        image="./img/box.svg"
+      />
+      <CardBeneficios
+        title="Cuidado profesional"
+        body="Usamos tecnología que cuida las superficies y materiales de los pisos."
+        image="./img/tuerca.svg"
+      />
+      <CardBeneficios
+        title="Excelente presentación"
+        body="Ideal para eventos, entregas de obra o mantenimiento."
+        image="./img/user.svg"
+      />
+    </div>
+  </div>
+</Section>
