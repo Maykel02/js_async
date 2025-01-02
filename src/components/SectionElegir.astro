@@ -1,0 +1,36 @@
+---
+import Section from "./ux/Section.astro";
+import Title from "./ux/Title.astro";
+---
+
+<div class="flex bg-white items-center gap-20">
+  <img src="./img/fondo-section.jpg" alt="" />
+  <div class="container mx-auto">
+    <Title text_1="Por Qué Elegir" text_2="Barredora Perú" />
+    <div class="grid grid-cols-3 gap-7 text-center text-white p-10">
+      <!--  there is a fisrt card -->
+      <div class="bg-[var(--primary-color)] px-10 py-20 rounded-lg">
+        <h3 class="text-lg font-bold">Somos Pioneros en Perú</h3>
+        <p class="text-sm">
+          Más de 14 años liderando el mercado de limpieza industrial Mecanizada
+          y automatizada.
+        </p>
+      </div>
+      <!-- There is a Second Card -->
+      <div class="bg-[var(--primary-color)] px-10 py-20 rounded-lg">
+        <h3 class="text-lg font-bold">Visita técnica gratuita</h3>
+        <p class="text-sm">
+          Evaluamos tu proyecto sin compromiso en Lima Metropolitana.
+        </p>
+      </div>
+      <!-- There is a Thirs Card -->
+      <div class="bg-[var(--primary-color)] px-10 py-20 rounded-lg">
+        <h3 class="text-lg font-bold">Atención personalizada</h3>
+        <p class="text-sm">
+          Soluciones adaptadas a tus necesidades específicas y la tipología de
+          tu local o empresa..
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
