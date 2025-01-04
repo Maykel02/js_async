@@ -1,0 +1,29 @@
+---
+const { label } = Astro.props;
+---
+
+<a class="text-center relative rounded-full" href="" id="breathing">
+  <button
+    class="bg-green-500 flex justify-center items-center lg:py-4 lg:px-9 py-2 px-5 rounded-full gap-2">
+    <img class="w-9" src="/img/whatsapp_blanco.svg" alt="" />
+    <p class="text-white lg:text-2xl text-lg mb-1">{label}</p>
+  </button>
+</a>
+
+<style>
+  #breathing {
+    animation: breathing-animation 2s infinite;
+  }
+
+  @keyframes breathing-animation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+</style>

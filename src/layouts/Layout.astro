@@ -1,33 +1,35 @@
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/img/logo.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Barredoras JMC</title>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 
 <style>
-	html,
-	:root{
-		--primary-color: #0063AD;
-		--bg-color:#F1F1F1;
-		--text-color:#333;
-		--p-font-size: 16rem;
-	}
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-		background-color: var(--bg-color);
-	}
-	p{
-		color: #f01111;
-		font-size: var(--p-font-size);
-	}
+  html {
+    scroll-behavior: smooth;
+  }
+  :root {
+    --primary-color: #0063ad;
+    --bg-color: #f1f1f1;
+    --text-color: #333;
+    --p-font-size: 16rem;
+  }
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+  }
+  p {
+    color: #f01111;
+    font-size: var(--p-font-size);
+  }
 </style>

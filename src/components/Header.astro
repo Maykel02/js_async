@@ -1,74 +1,117 @@
 ---
-
+// filepath: /C:/Users/MaikelDev/OneDrive/Documentos/web/jmc/src/components/Header.astro
+import Buttom from "./ux/Buttom.astro";
 ---
 
-<header class="relative w-full h-screen overflow-hidden">
-  <nav class="z-50 w-full" id="navbar">
+<header
+  class="relative w-full overflow-hidden lg:pb-20 pb-4 2xl:h-[900px] xl:h-[800px] lg:h-[500px] flex flex-col justify-between">
+  <nav class="w-full" id="navbar">
     <!-- contenedor -->
     <div
-      class="container mx-auto flex justify-between items-center px-10 py-14 h-20">
+      class="container mx-auto flex justify-between items-center md:px-10 px-4 py-14 h-24">
       <!--  logo -->
       <div class="logo">
-        <a href="/"><img src="./img/logo.png" alt="" /></a>
+        <a href="/"><img class="w-52" src="./img/logo.png" alt="" /></a>
       </div>
       <!-- menu -->
-      <ul class="flex space-x-10 font-semibold text-white items-center">
-        <li>
-          <a href="#">Servicios</a>
-        </li>
-        <li>
-          <a href="#">Contáctenos</a>
-        </li>
-        <li>
-          <a href="#"><img src="./img/call.png" alt="" /></a>
-        </li>
-      </ul>
+      <div
+        id="menu"
+        class="hidden md:flex bg-white md:bg-transparent fixed md:static top-0 left-0 md:w-auto w-full h-full md:h-auto md:flex-row flex-col justify-center items-center md:gap-0 gap-4 md:py-0 py-4 md:px-0 px-4 md:mr-0 mr-0 md:ml-0 ml-0 md:shadow-none shadow-lg">
+        <!-- iconclose -->
+        <img
+          id="closeMenu"
+          class="cursor-pointer md:hidden absolute top-4 right-4"
+          src="/img/plus.svg"
+          alt="Close Menu"
+        />
+        <!-- menu -->
+        <ul
+          class="font-semibold md:text-white  text-[var(--primary-color)] flex flex-col md:flex-row gap-8 pl-4">
+          <li class="flex items-center justify-center md:pl-5 relative h-16">
+            <a class="hover:text-[var(--primary-color)]" href="#target-servicios">Servicios</a>
+          </li>
+          <li
+            class="flex items-center md:pl-5 pl-0 justify-center relative h-16">
+            <a class="hover:text-[var(--primary-color)]" href="#target-footer">Contáctenos</a>
+          </li>
+          <li class="items-center md:flex hidden pl-5 relative h-16">
+            <a
+              class="flex gap-2 bg-[var(--primary-color)] py-3 px-6 rounded-full"
+              href="#">
+              <img src="./img/whatsapp.svg" alt="" />976 687 876
+            </a>
+          </li>
+        </ul>
+      </div>
+      <img
+        id="openMenu"
+        class="cursor-pointer static md:hidden"
+        src="/img/bars.svg"
+        alt="Open Menu"
+      />
     </div>
   </nav>
   <!-- contenido -->
-  <div class="flex flex-col justify-center h-full">
-    <h1 class="text-white text-5xl font-bold text-center mt-20">
-      <span class="block">BARRIDO INDUSTRIAL EN PERÚ</span>
-      <span class="block">BARREDORA PERU</span>
+  <div class="flex flex-col justify-end items-center">
+    <h1 class="text-white lg:text-5xl text-lg font-bold text-center">
+      <span class="block bg-[var(--primary-color)] py-2 px-4 rounded-md"
+        >BARRIDO INDUSTRIAL EN PERÚ</span
+      >
+      <span class="block">BARREDORA GRUPO JMC</span>
     </h1>
-    <p class="text-white text-center mt-5">
+    <p class="text-white text-center lg:mt-5 mt-2 lg:mb-10 mb-2 text-lg">
       La solución eficiente y profesional para limpiar grandes áreas
       industriales y comerciales.
     </p>
-    <video autoplay muted id="background-video" loop
-      ><!--  -->
-      <source src="/img/background-header.mp4" type="video/mp4" />
-    </video>
+    <div class="w-full flex justify-center">
+      <Buttom label="Escríbenos" />
+    </div>
   </div>
-
-  <style>
-
-    ul li {
-      position: relative;
-      padding-left: 10px; /* Ajusta el espacio a la izquierda del texto */
-    }
-    ul li:not(:first-child)::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-      width: 2px; /* Ancho de la línea vertical */
-      height: 50%; /* Altura de la línea vertical */
-      background-color: white; /* Color de la línea vertical */
-    }
-    #navbar {
-      z-index: 1;
-      background: linear-gradient(to bottom, rgb(0, 0, 0), transparent);
-    }
-    #background-video {
-      position: absolute;
-      width: 100%;
-      height: auto;
-      overflow: hidden;
-      object-fit: cover;
-      top: 0px;
-      z-index: -1;
-    }
-  </style>
+  <video
+    autoplay
+    muted
+    id="background-video"
+    loop
+    class="md:top-0 top-2 absolute object-cover w-full h-full -z-40">
+    <source src="/img/background-header.mp4" type="video/mp4" />
+  </video>
 </header>
+
+<style>
+  ul li:not(:first-child)::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 50%;
+    background-color: white;
+  }
+  #navbar {
+    z-index: 1;
+    background: linear-gradient(to bottom, rgb(0, 0, 0), transparent);
+  }
+</style>
+
+<script>
+  const btnMenu = document.getElementById("openMenu");
+  const closeMenu = document.getElementById("closeMenu");
+  const menu = document.getElementById("menu");
+
+  const toggleMenu = () => {
+    menu?.classList.toggle("hidden");
+    menu?.classList.toggle("flex");
+  };
+
+  btnMenu?.addEventListener("click", toggleMenu);
+  closeMenu?.addEventListener("click", toggleMenu);
+
+  document.addEventListener("click", (event) => {
+    const target = event.target as Node;
+    if (!menu?.contains(target) && !btnMenu?.contains(target)) {
+      menu?.classList.add("hidden");
+      menu?.classList.remove("flex");
+    }
+  });
+</script>

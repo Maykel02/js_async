@@ -1,14 +1,16 @@
 ---
-import Section from "./ux/Section.astro"
-import Title from "./ux/Title.astro"
+import Section from "./ux/Section.astro";
+import Title from "./ux/Title.astro";
 ---
+
 <Section color="#ffffff">
-    <div class="container mx-auto text-center">
-        <Title 
-        text_1="Casos de éxito"
-        text_2="Empresas que confían en nosotros"
-        >
-        </Title>
-       
-    </div>
+  <div class="container mx-auto text-center pt-5">
+    <Title text_1="Casos de éxito" text_2="Empresas que confían en nosotros" />
+  </div>
+  <div class="grid md:grid-cols-4 grid-cols-2 container mx-auto text-center gap-4 pb-5">
+    <img class="w-44 mx-auto filter grayscale hover:filter-none transition duration-300" src="/img/LOGO_1.jpg" alt="">
+    <img class="w-44 mx-auto filter grayscale hover:filter-none transition duration-300" src="/img/LOGO_2.jpg" alt="">
+    <img class="w-44 mx-auto filter grayscale hover:filter-none transition duration-300" src="/img/LOGO_3.jpg" alt="">
+    <img class="w-44 mx-auto filter grayscale hover:filter-none transition duration-300" src="/img/LOGO_4.jpg" alt="">
+  </div>
 </Section>

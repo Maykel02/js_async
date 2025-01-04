@@ -1,32 +1,104 @@
 ---
+// filepath: /C:/Users/MaikelDev/OneDrive/Documentos/web/jmc/src/components/SectionFq.astro
 import Section from "./ux/Section.astro";
 import Title from "./ux/Title.astro";
 ---
 
 <Section>
-  <div class="container mx-auto text-center">
+  <div class="pt-5 container mx-auto text-center">
     <Title text_1="Preguntas" text_2="Frecuentes" />
   </div>
-  <div class="container max-w-5xl mx-auto gap-6 flex flex-col text-center text-white">
-    <div class="bg-[var(--primary-color)] rounded-full py-4">
-        <h2 class="font-semibold text-xl ">¿Cuánto tiempo toma limpiar un área grande?</h2>
-        <p></p>
+  <div
+    class="pb-5 px-3 container max-w-5xl mx-auto gap-6 flex flex-col text-white">
+    <div
+      class="bg-[var(--primary-color)] rounded-full py-4 flex justify-center items-center px-5">
+      <h2 class="font-semibold text-xl">
+        ¿Cuánto tiempo toma limpiar un área grande?
+      </h2>
+      <button class="toggle-button pl-5" data-target="content-1">
+        <img src="/img/plus-circle.svg" alt="Toggle" />
+      </button>
     </div>
-    <div class="bg-[var(--primary-color)] py-4">
-        <h2>¿Cuánto tiempo toma limpiar un área grande?</h2>
-        <p></p>
+    <div id="content-1" class="py-4 contenido hidden">
+      <p class="text-gray-600">
+        Dependerá del tamaño y la complejidad del espacio, pero nuestras
+        máquinas pueden completar trabajos en horas que tomarían días con
+        métodos tradicionales.
+      </p>
     </div>
-    <div class="bg-[var(--primary-color)] py-4">
-        <h2>¿Cuánto tiempo toma limpiar un área grande?</h2>
-        <p></p>
+    <div
+      class="bg-[var(--primary-color)] rounded-full py-4 flex justify-center items-center px-5">
+      <h2 class="font-semibold text-xl">
+        ¿Qué tipos de pisos pueden limpiarse?
+      </h2>
+      <button class="toggle-button pl-5" data-target="content-2">
+        <img src="/img/plus-circle.svg" alt="Toggle" />
+      </button>
     </div>
-    <div class="bg-[var(--primary-color)] py-4">
-        <h2>¿Cuánto tiempo toma limpiar un área grande?</h2>
-        <p></p>
+    <div id="content-2" class="py-4 contenido hidden">
+      <p class="text-gray-600">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores,
+        adipisci. Cumque aut inventore culpa fugit sapiente, nobis obcaecati.
+        Sed totam perferendis excepturi maxime obcaecati cum, nemo quos sapiente
+        dolor veritatis?
+      </p>
     </div>
-    <div class="bg-[var(--primary-color)] py-4">
-        <h2>¿Cuánto tiempo toma limpiar un área grande?</h2>
-        <p></p>
+    <div
+      class="bg-[var(--primary-color)] rounded-full py-4 flex justify-center items-center px-5">
+      <h2 class="font-semibold text-xl">¿Ofrecen servicios permanentes?</h2>
+      <button class="toggle-button pl-5" data-target="content-3">
+        <img src="/img/plus-circle.svg" alt="Toggle" />
+      </button>
     </div>
-</div>
+    <div id="content-3" class="py-4 contenido hidden">
+      <p class="text-gray-600">
+        Sí, tenemos planes de mantenimiento regular adaptados a empresas que
+        necesitan limpieza constante.
+      </p>
+    </div>
+    <div
+      class="bg-[var(--primary-color)] rounded-full py-4 flex justify-center items-center px-5">
+      <h2 class="font-semibold text-xl">¿Cuánto cuesta el servicio?</h2>
+      <button class="toggle-button pl-5" data-target="content-4">
+        <img src="/img/plus-circle.svg" alt="Toggle" />
+      </button>
+    </div>
+    <div id="content-4" class="py-4 contenido hidden">
+      <p class="text-gray-600">
+        El costo depende de factores como tamaño del área, ubicación y tipo de
+        suciedad. Solicita tu visita técnica gratuita para una cotización
+      </p>
+    </div>
+  </div>
 </Section>
+
+<style>
+  .contenido.hidden {
+    display: none;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll(".toggle-button");
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const targetId = button.getAttribute("data-target");
+        const targetContent = document.getElementById(targetId);
+
+        // Check if the target content is already visible
+        const isVisible = !targetContent?.classList.contains("hidden");
+
+        // Hide all contents
+        document.querySelectorAll(".contenido").forEach((content) => {
+          content.classList.add("hidden");
+        });
+
+        // Toggle the target content
+        if (!isVisible) {
+          targetContent?.classList.remove("hidden");
+        }
+      });
+    });
+  });
+</script>

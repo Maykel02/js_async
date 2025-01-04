@@ -4,35 +4,68 @@ import Title from "./ux/Title.astro";
 ---
 
 <Section>
-  <div class="text-center container mx-auto">
-    <Title text_1="Tecnología de Limpieza" text_2="Avanzada" />
-  </div>
-  <div class="container mx-auto max-w-7xl">
-    <div class="grid grid-cols-3 gap-10">
+  <div class="md:py-0 py-10">
+    <div class="text-center container mx-auto">
+      <Title text_1="Tecnología de Limpieza" text_2="Avanzada" />
+    </div>
+    <div class="container mx-auto max-w-7xl">
+      <div class="grid md:grid-cols-3 grid-cols-1 gap-10 px-6">
         <!-- There is a Primer Card -->
         <div class="flex flex-col items-center bg-white">
-            <img class="w-full" src="./img/image-1.jpg" alt="">
-            <div class="py-8 px-5">
-                <h3 class="font-bold text-xl text-[var(--primary-color)]">Barredoras industriales</h3>
-                <p class="text-sm">Equipos diseñados para cubrir grandes áreas con precisión y automatización.</p>
-            </div>
+          <img class="w-full" src="./img/image-1.jpg" alt="" />
+          <div class="py-8 px-5">
+            <h3 class="font-bold text-xl text-[var(--primary-color)]">
+              Barredoras industriales
+            </h3>
+            <p class="text-sm">
+              Equipos diseñados para cubrir grandes áreas con precisión y
+              automatización.
+            </p>
+          </div>
         </div>
         <!-- Ther is a Second Card -->
         <div class="flex flex-col items-center bg-white">
-            <img class="w-full" src="./img/image-2.jpg" alt="">
-            <div class="py-8 px-5">
-                <h3 class="font-bold text-xl text-[var(--primary-color)]">Fregadoras Industriales</h3>
-                <p class="text-sm">Eliminan manchas difíciles y residuos adheridos.</p>
-            </div>
+          <img class="w-full" src="./img/image-2.jpg" alt="" />
+          <div class="py-8 px-5">
+            <h3 class="font-bold text-xl text-[var(--primary-color)]">
+              Fregadoras Industriales
+            </h3>
+            <p class="text-sm">
+              Eliminan manchas difíciles y residuos adheridos.
+            </p>
+          </div>
         </div>
-       <!--  there is a third card -->
+        <!--  there is a third card -->
         <div class="flex flex-col items-center bg-white">
-            <img class="w-full" src="./img/image-3.jpg" alt="">
-            <div class="py-8 px-5">
-                <h3 class="font-bold text-xl text-[var(--primary-color)]">Barredoras industriales</h3>
-                <p class="text-sm">Para áreas con residuos finos o delicados.</p>
-            </div>
+          <img class="w-full" src="./img/image-3.jpg" alt="" />
+          <div class="py-8 px-5">
+            <h3 class="font-bold text-xl text-[var(--primary-color)]">
+              Barredoras industriales
+            </h3>
+            <p class="text-sm">Para áreas con residuos finos o delicados.</p>
+          </div>
         </div>
+      </div>
     </div>
   </div>
 </Section>
+<style>
+  img {
+    animation-name: show;
+    animation-timeline: --image;
+    animation-range: entry 25% cover 80%;
+    animation-fill-mode: both;
+    view-timeline-axis: block;
+    view-timeline-name: --image;
+  }
+  @keyframes show {
+    from {
+      opacity: 0;
+      scale: 25%;
+    }
+    to {
+      opacity: 1;
+      scale: 100%;
+    }
+  }
+</style>

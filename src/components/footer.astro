@@ -3,7 +3,9 @@ import Section from "./ux/Section.astro";
 ---
 
 <Section color="var(--primary-color)">
-  <div class="container max-w-2xl mx-auto text-center gap-10 text-white flex justify-center flex-col items-center">
+  <div
+    id="target-footer"
+    class="py-5 container max-w-2xl mx-auto text-center gap-10 text-white flex justify-center flex-col items-center">
     <img src="./img/log_blanco.svg" alt="" />
     <p>
       El barrido industrial es un servicio tecnificado para la limpieza de
@@ -13,9 +15,17 @@ import Section from "./ux/Section.astro";
       calidad.
     </p>
     <ul class="text-center">
-        <li class="flex gap-2 items-center justify-center py-3"><img class="w-5" src="./img/home.svg" alt="">Av. Aviación 534 Lima Peru</li>
-        <li class="flex gap-2 items-center justify-center py-3"><img class="w-5" src="./img/phone.svg" alt="">987 987 987</li>
-        <li class="flex gap-2 items-center justify-center py-3"><img class="w-5" src="./img/icono_clock.svg" alt="">Lunes a Viernes de 8:00 am a 5:00 pm</li>
+      <li class="flex gap-2 items-center justify-center py-3">
+        <img class="w-5" src="./img/home.svg" alt="" />Av. Aviación 534 Lima
+        Peru
+      </li>
+      <li class="flex gap-2 items-center justify-center py-3">
+        <img class="w-5" src="./img/phone.svg" alt="" />987 987 987
+      </li>
+      <li class="flex gap-2 items-center justify-center py-3">
+        <img class="w-5" src="./img/icono_clock.svg" alt="" />Lunes a Viernes de
+        8:00 am a 5:00 pm
+      </li>
     </ul>
   </div>
 </Section>
